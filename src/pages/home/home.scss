@@ -1,0 +1,34 @@
+page-home {
+
+}
+
+
+#speech {
+    opacity: 1;
+    position: relative;
+    top: -80%;
+    left: 55%;
+    width: 25%;;
+}
+
+#conor {
+    opacity: 1;
+  	overflow-y: hidden;
+    cursor: hand;
+    height: 100%;
+}
+
+.home_header {
+	background-color: orange;
+}
+
+.no-scroll {
+    overflow-y: hidden !important;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}

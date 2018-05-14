@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="green">
+    <ion-title text-center text-capitalize> SOUNDS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+	<ion-list *ngFor="let sound of this.soundsList">
+		<ion-card (click)="playSound(sound)" >
+			<div class= "cell_content" padding>
+				<h2 class= "cell_header">{{sound.title}}</h2>
+				<span class= "cell_label">{{sound.location}}</span>
+			</div>
+			<div class="cell_icon" padding>
+				<ion-icon name="volume-up" item-end class="icon_size"></ion-icon>
+			</div>
+		</ion-card>
+	</ion-list>
+</ion-content>
