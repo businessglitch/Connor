@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Platform } from 'ionic-angular';
 import {AdMobFree, AdMobFreeBannerConfig} from   "@ionic-native/admob-free"
 
 
@@ -10,21 +9,19 @@ import {AdMobFree, AdMobFreeBannerConfig} from   "@ionic-native/admob-free"
 })
 export class HomePage {
 
-  	constructor(private platform: Platform,public navCtrl: NavController, private adMob: AdMobFree) {
-  		platform.ready().then(() => {
-    		if (this.platform.is('cordova')) this.showBannerAd();
-    	});
+  	constructor(public navCtrl: NavController, private adMob: AdMobFree) {
+  		 this.showBannerAd();
   	}
 
   	async showBannerAd() {
-	  	const bannerConfig: AdMobFreeBannerConfig ={
-	  		//id: '',
-	  		isTesting: true,
-	  		autoShow: true,
-	  	}
-	  	this.adMob.banner.config(bannerConfig);
-
+	  
 	  	try {
+	  		const bannerConfig: AdMobFreeBannerConfig = {
+		  		id: 'ca-app-pub-1159899900107606~4293921350',
+		  		isTesting: true,
+		  		autoShow: true,
+	  		}
+	  		this.adMob.banner.config(bannerConfig);
 	  		const result = await this.adMob.banner.prepare();
 	  		console.log(result);
 	  	} 
