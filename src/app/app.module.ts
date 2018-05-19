@@ -9,6 +9,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { AdMobFree} from "@ionic-native/admob-free";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BannerAdProvider } from '../providers/banner-ad/banner-ad';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AdMobFree
+    AdMobFree,
+    BannerAdProvider
   ]
 })
 export class AppModule {}

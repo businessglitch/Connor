@@ -1,24 +1,23 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Injectable } from '@angular/core';
 import {AdMobFree, AdMobFreeBannerConfig} from   "@ionic-native/admob-free"
+/*
+  Generated class for the BannerAdProvider provider.
 
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+@Injectable()
+export class BannerAdProvider {
 
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
+  constructor(private adMob: AdMobFree) {
+    console.log('Hello BannerAdProvider Provider');
+  }
 
-  	constructor(public navCtrl: NavController, private adMob: AdMobFree) {
-  		 this.showBannerAd();
-  	}
-
-  	async showBannerAd() {
+  async showBannerAd() {
 	  
 	  	try {
 	  		const bannerConfig: AdMobFreeBannerConfig = {
 		  		id: 'ca-app-pub-1159899900107606/8625840613',
-		  		isTesting: true,
 		  		autoShow: true,
 	  		}
 	  		this.adMob.banner.config(bannerConfig);
